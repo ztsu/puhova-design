@@ -39,6 +39,7 @@
             z-index: 1;
             height: 10vh;
             top: 0;
+            background-color: #fff;
         }
         header h1 {
             font-size: 3.5vh;
@@ -59,20 +60,43 @@
 
         .images {
             display: flex;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            overflow-x: scroll;
+            flex-direction: column;
+            width: 100vw;
+            margin-top: 10vh;
         }
 
         .images figure {
-            margin: 10vh 1px 0 0;
+            margin: 0 0 1px 0;
+        }
+
+        .images figure:last-child {
+            margin-bottom: 0;
         }
 
         .images figure > img {
-            height: 90vh;
-            object-fit: cover;
+            height: auto;
+            width: 100vw;
+        }
+
+        @media screen and (min-width: 769px) {
+            .images {
+                flex-direction: row;
+                overflow-x: scroll;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                margin: 0;
+            }
+
+            .images figure {
+                margin: 10vh 1px 0 0;
+            }
+
+            .images figure > img {
+                height: 90vh;
+                object-fit: cover;
+            }
         }
 
         /*  */
@@ -130,6 +154,7 @@
             stroke: black;
             stroke-width: 5.5;
             stroke-linecap: round;
+            transition: all .4s;
         }
 
         .hamb-icon .line.top {
@@ -140,11 +165,14 @@
         .hamb-icon .line.middle {
             stroke-dasharray: 40 142;
             transform-origin: 50%;
+            transition: transform .4s;
+            transition: all .4s;
         }
 
         .hamb-icon .line.bottom {
             stroke-dasharray: 40 85;
             transform-origin: 50%;
+            transition: all .4s;
         }
 
         .hamb-input:checked ~ .hamb-label .hamb-icon .line.top {
@@ -176,10 +204,6 @@
             <li><a href="#careers">Careers</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <!-- <label class="menu-icon" for="menu-btn">
-            <span class="navicon"></span>
-        </label> -->
-
         <label class="hamb-label" for="menu-btn">
             <svg class="hamb-icon" viewBox="0 0 100 100" width="80">
                 <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
