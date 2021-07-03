@@ -40,7 +40,13 @@
             height: 10vh;
             top: 0;
             background-color: #fff;
+            transition: transform .3s;
         }
+
+        header.__scroll-down {
+            transform: translateY(-10vh);
+        }
+
         header h1 {
             font-size: 3.5vh;
             font-weight: 700;
@@ -195,6 +201,37 @@
     </style>
 </head>
 <body>
+    <script>
+        (() => {
+            const check = (elem, up, down, initPos) => {
+                let pos = 0;
+                let w = window;
+
+                return () => {
+                    let shift = 0;
+
+                    if (w.scrollY > initPos) {
+                        shift = w.scrollY;
+                    }
+
+                    if (shift > pos && !elem.classList.contains(down)) {
+                        elem.classList.remove(up);
+                        elem.classList.add(down);
+
+                    } else if (shift < pos && !elem.classList.contains(up)) {
+                        elem.classList.remove(down);
+                        elem.classList.add(up);
+                    }
+
+                    pos = shift;
+                };
+            }
+
+            window.addEventListener("DOMContentLoaded", () => {
+                window.addEventListener("scroll", check(document.querySelector("header"), "__scroll-up", "__scroll-down", 200));
+            })
+        })()
+    </script>
     <header>
         <h1><a href="/">OXANA PUHOVA</a></h1>
         <input class="hamb-input" type="checkbox" id="menu-btn" />
