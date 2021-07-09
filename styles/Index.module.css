@@ -1,0 +1,40 @@
+.images {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin-top: 10vh;
+}
+
+.imagesFigure {
+  margin: 0 0 1px 0;
+}
+
+.images-figure:last-child {
+  margin-bottom: 0;
+}
+
+.images-figure-img {
+  height: auto;
+  width: 100vw;
+}
+
+@media screen and (min-width: 769px) {
+  .images {
+      flex-direction: row;
+      overflow-x: scroll;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      margin: 0;
+  }
+
+  .images figure {
+      margin: 10vh 1px 0 0;
+  }
+
+  .images figure > img {
+      height: 90vh;
+      object-fit: cover;
+  }
+}

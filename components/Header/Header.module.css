@@ -1,0 +1,129 @@
+.header {
+    position: fixed;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    z-index: 1;
+    height: 10vh;
+    top: 0;
+    background-color: #fff;
+    transition: transform .3s;
+}
+  
+.header.__scroll-down {
+    transform: translateY(-10vh);
+}
+
+
+.headerLogo {
+    font-size: 3.5vh;
+    font-weight: 700; 
+    margin: 2.5vh 0 2.5vh 2.5vh; 
+    padding: 0 1vh;
+    height: 5vh;
+    line-height: 5vh;
+  }
+
+.headerLogoLink {
+    text-decoration: none;
+}
+
+.headerLogoLink:hover {
+    color: inherit;
+}
+
+
+.hambInput {
+    display: none;
+}
+
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    max-height: 0;
+    font-size: 22px; 
+}
+
+.menuLink {
+    display: block;
+    padding: 20px 50px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menuLink:hover {
+    background-color: #f4f4f4;
+}
+
+
+.hambLabel {
+    width: 5vh;
+    height: 5vh;
+    margin: 2.5vh 2.5vh 0 0;
+    z-index: 1;
+}
+
+
+.hambIcon {
+    z-index: 6000;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.hambIconLine {
+    fill: none;
+    stroke: black;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+    transition: all .2s;
+}
+
+.hambIconLineTop {
+    stroke-dasharray: 40 160;
+    transform-origin: 50%;
+}
+
+.hambIconLineMiddle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: all .2s;
+}
+
+.hambIconLineBottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: all .2s;
+}
+
+
+.hambInput:checked ~ .menu {
+    max-height: 100vh;
+    padding-top: 10vh;
+}
+
+.hambInput:checked ~ .hambLabel .hambIconLineTop {
+    stroke-dashoffset: -64px;
+    transform: rotate(-45deg);
+}
+
+.hambInput:checked ~ .hambLabel .hambIconLineMiddle {
+    transform: rotate(45deg);
+}
+
+.hambInput:checked ~ .hambLabel .hambIconLineBottom {
+    stroke-dashoffset: -64px;
+    transform: rotate(-45deg);
+}
