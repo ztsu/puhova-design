@@ -6,7 +6,9 @@ export default function Header () {
     return (
         <header className={styles.header}>
             <h1 className={styles.headerLogo}>
-                <Link className={styles.headerLogoLink} href="/">OXANA PUHOVA</Link>
+                <Link href="/">
+                    <a className={styles.headerLogoLink}>OXANA PUHOVA</a>
+                </Link>
             </h1>
             <input className={styles.hambInput} type="checkbox" id="hambInput" />
             <ul className={styles.menu}>

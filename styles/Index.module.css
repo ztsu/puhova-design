@@ -1,40 +1,42 @@
 .images {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 10vh;
 }
 
 .imagesFigure {
-  margin: 0 0 1px 0;
+    margin: 0 0 1px 0;
 }
 
-.images-figure:last-child {
-  margin-bottom: 0;
+.imagesFigure:last-child {
+    margin-bottom: 0;
 }
 
-.images-figure-img {
-  height: auto;
-  width: 100vw;
+.imagesFigure > img{
+    height: auto;
+    width: 100vw;
 }
 
 @media screen and (min-width: 769px) {
-  .images {
-      flex-direction: row;
-      overflow-x: scroll;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      margin: 0;
-  }
+    .images {
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        margin: 0;
+    }
 
-  .images figure {
-      margin: 10vh 1px 0 0;
-  }
+    .imagesFigure {
+        margin: 10vh 1px 0 0;
+    }
 
-  .images figure > img {
-      height: 90vh;
-      object-fit: cover;
-  }
+    .imagesFigure > img {
+        height: 90vh;
+        width: auto;
+        object-fit: cover;
+    }
 }
