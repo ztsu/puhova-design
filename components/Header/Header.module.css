@@ -10,27 +10,46 @@
     background-color: #fff;
     transition: transform .3s;
 }
+
+.header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: inherit;
+}
   
 .header.__scroll-down {
     transform: translateY(-10vh);
 }
 
-
 .headerLogo {
     font-size: 3.5vh;
     font-weight: 700; 
-    margin: 2.5vh 0 2.5vh 2.5vh; 
+    margin: 2.5vh 0 2.5vh 2.5vh;
     padding: 0 1vh;
     height: 5vh;
     line-height: 5vh;
-  }
-
-.headerLogoLink {
-    text-decoration: none;
 }
 
-.headerLogoLink:hover {
-    color: inherit;
+.headerMenu {
+    display: flex;
+}
+
+.tel {
+    font-size: 3vh;
+    margin: 2.5vh 5vw 2.5vh 2.5vh; 
+    padding: 0 1vh;
+    height: 5vh;
+    line-height: 5vh;
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    .tel {
+        display: block;
+    }
 }
 
 
@@ -64,6 +83,16 @@
 
 .menuLink:hover {
     background-color: #f4f4f4;
+}
+
+.desktop {
+    display: inherit;
+}
+
+@media screen and (min-width: 769px) {
+    .desktop {
+        display: none;
+    }
 }
 
 
