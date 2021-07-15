@@ -23,10 +23,11 @@ export default function Header () {
                 </Link>
             </h1>
             <div className={styles.headerMenu}>
-                <div className={styles.tel}><a href={`tel:${tel}`} className="tel">{formatPhoneNumber(tel)}</a></div>
+                <a className={`${styles.instagram} ${styles.desktop}`} href="https://www.instagram.com/oxana_puhova/"><img  src="/instagram.svg" alt="@oxana_puhova" /></a>
+                <div className={`${styles.tel} ${styles.desktop}`}><a href={`tel:${tel}`} className="tel">{formatPhoneNumber(tel)}</a></div>
                 <input className={styles.hambInput} type="checkbox" id="hambInput" />
                 <ul className={styles.menu}>
-                    <li className={styles.desktop}><a className={styles.menuLink} href={`tel:${tel}`}>{formatPhoneNumber(tel)}</a></li>
+                    <li className={`${styles.mobile}`}><a className={styles.menuLink} href={`tel:${tel}`}>{formatPhoneNumber(tel)}</a></li>
                     <li><a className={styles.menuLink} href="#design">Дизайн-проект</a></li>
                     <li><a className={styles.menuLink} href="#advise">Консультация</a></li>
                     <li><a className={styles.menuLink} href="#contact">Записаться на проект</a></li>

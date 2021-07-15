@@ -25,8 +25,8 @@
 }
 
 .headerLogo {
-    font-size: 3.5vh;
-    font-weight: 700; 
+    font-size: 4vh;
+    font-weight: 100; 
     margin: 2.5vh 0 2.5vh 2.5vh;
     padding: 0 1vh;
     height: 5vh;
@@ -43,13 +43,6 @@
     padding: 0 1vh;
     height: 5vh;
     line-height: 5vh;
-    display: none;
-}
-
-@media screen and (min-width: 769px) {
-    .tel {
-        display: block;
-    }
 }
 
 
@@ -85,16 +78,6 @@
     background-color: #f4f4f4;
 }
 
-.desktop {
-    display: inherit;
-}
-
-@media screen and (min-width: 769px) {
-    .desktop {
-        display: none;
-    }
-}
-
 
 .hambLabel {
     width: 5vh;
@@ -115,7 +98,7 @@
 .hambIconLine {
     fill: none;
     stroke: black;
-    stroke-width: 5.5;
+    stroke-width: 2;
     stroke-linecap: round;
     transition: all .2s;
 }
@@ -155,4 +138,30 @@
 .hambInput:checked ~ .hambLabel .hambIconLineBottom {
     stroke-dashoffset: -64px;
     transform: rotate(-45deg);
+}
+
+.instagram {
+    height: 3vh;
+    width: 3vh;
+    margin-top: 3.5vh;
+    display: inline-block;
+}
+
+
+.mobile {
+    display: block;
+}
+
+.desktop {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
 }
